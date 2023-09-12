@@ -36,3 +36,13 @@ for(i = 0; i<according.length; i++){
     this.classList.toggle("active");
   })
 }
+
+
+const Faqss = document.querySelector('.FAQs-btn');
+  Faqss.addEventListener('click', function() {
+    const FaqssContent = document.querySelector('#question-section-collapse');
+    FaqssContent.style.display='none';
+  })
+
+
+
