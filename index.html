@@ -133,7 +133,7 @@
                 <p>+974</p>
               </div>
               <div class="middle-number-right">
-                <input type="text" placeholder="enter phone number" />
+                <input type="number" placeholder="enter phone number" id="input-phoneNumber"/>
               </div>
             </div>
             <div class="middle-btn">
@@ -143,8 +143,8 @@
           <div class="heroLeftEnd">
             <h1>Track your Parcel</h1>
             <div class="heroLeftEnd-input">
-              <input type="text" placeholder="enter parcel ID" />
-              <button>Track</button>
+              <input id="myInput" type="text" placeholder="enter parcel ID" />
+              <button id="myButton" disabled type="submit" onclick="myFun()">Track</button>
             </div>
           </div>
         </div>
@@ -155,7 +155,7 @@
               <p>+974</p>
             </div>
             <div class="middle-number-right">
-              <input type="text" placeholder="enter phone number" />
+              <input type="number" placeholder="enter phone number" />
             </div>
           </div>
           <div class="middle-btn">
@@ -627,7 +627,52 @@
 
     <!-- Input section start  -->
 
-    <div class="container input-section">
+    <div class="container home-input">
+      <h1 class="common-header">Delivery Calculator</h1>
+      <p class="input-head-text">
+        Want to know how much it will cost to send a parcel to any location?
+      </p>
+      <div class="input-head-third-text">
+        <p class="input-head-left-text">Check our</p>
+        <p class="input-head-right-text">Detailed list</p>
+      </div>
+      <div class="home-form">
+        <form action="/action_page.php">
+          <label for="fname" id="form-text">Weight (Up-to 10kg)</label>
+          <input type="text" id="fname" name="firstname">
+      
+          <label for="lname" id="form-text">Selling price of the product</label>
+          <input type="text" id="lname" name="lastname">
+      
+          <div class="select-div">
+            <div class="select-div-part">
+              <label for="country" id="form-text">Pickup Area</label>
+              <div class="styled-select">
+                <select id="country" name="country">
+                  <option value="australia">Australia</option>
+                  <option value="canada">Canada</option>
+                  <option value="usa">USA</option>
+                </select>
+              </div>
+            </div>
+            <div class="select-div-part">
+              <label for="country" id="form-text">Delivery Area</label>
+              <div class="styled-select">
+                <select id="country" name="country">
+                  <option value="australia">Australia</option>
+                  <option value="canada">Canada</option>
+                  <option value="usa">USA</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        
+          <input type="submit" value="Calculate Price">
+        </form>
+      </div> 
+    </div>
+
+    <!-- <div class="container input-section">
       <h1 class="common-header">Delivery Calculator</h1>
       <p class="input-head-text">
         Want to know how much it will cost to send a parcel to any location?
@@ -679,13 +724,11 @@
         </div>
         <button class="input-area-button-section">Calculate Price</button>
       </div>
-    </div>
+    </div> -->
 
     <!-- Input section End -->
 
     <!-- client-comment Start  -->
-
-
 
       <div class="swiper mySwiper container client">
         <h1 class="common-header">Clients Love Ramnode</h1>
@@ -789,8 +832,6 @@
         </div>
       </div>
 
-
-
     <!-- client-comment end -->
 
     <!-- Question Section Start  -->
@@ -798,6 +839,54 @@
     <div class="container question-section">
       <h1 class="common-header">Still have questions? We have answers!</h1>
       <div class="question-section-collapse">
+        <div class="question-section-collapse-div">
+          <button class="collapsible">
+            <span class="collapse-span">What is Ramnode?</span>
+          </button>
+          <div class="content">
+            <p>
+              Ramnode is a tech-based logistics company operating nationwide and
+              offering end-to-end services like parcel deliveries for SMEs,
+              documents and parcel couriers for individuals and enterprise
+              logistics solutions for corporate companies
+            </p>
+          </div>
+        </div>
+        <hr class="hr" />
+        <div class="question-section-collapse-div">
+          <button class="collapsible">
+            <span class="collapse-span"
+              >What kind of services does Ramnode offer?</span
+            >
+          </button>
+          <div class="content">
+            <p>
+              Ramnode is a tech-based logistics company operating nationwide and
+              offering end-to-end services like parcel deliveries for SMEs,
+              documents and parcel couriers for individuals and enterprise
+              logistics solutions for corporate companies
+            </p>
+          </div>
+        </div>
+        <hr class="hr" />
+        <div>
+          <button class="collapsible">
+            <span class="collapse-span"
+              >What is the coverage area of Ramnode delivery?</span
+            >
+          </button>
+          <div class="content">
+            <p>
+              Ramnode is a tech-based logistics company operating nationwide and
+              offering end-to-end services like parcel deliveries for SMEs,
+              documents and parcel couriers for individuals and enterprise
+              logistics solutions for corporate companies
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="question-section-collapse" id="question-none">
+        <hr class="hr">
         <div class="question-section-collapse-div">
           <button class="collapsible">
             <span class="collapse-span">What is Ramnode?</span>
@@ -1108,6 +1197,8 @@
     <!-- Footer End -->
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="App.js"></script>
+
     <script>
         var swiper = new Swiper(".mySwiper", {    
     slidesPerView: 3,
@@ -1132,7 +1223,33 @@
 
   }
   });  
+
+
+const input = document.getElementById("myInput");
+const button = document.getElementById("myButton");
+
+input.addEventListener("input", () => {
+  if (input.value.length > 0) {
+    button.disabled = false;
+    button.style.backgroundColor = 'black'
+  } else if(input.value.length<0) {
+    button.disabled = true; 
+  }
+
+});
+
+button.addEventListener('click',()=>{
+  button.style.backgroundColor = '#4A4A4A'
+})
+
+const qnone = document.querySelector('#question-none');
+const btnNone = document.querySelector('.FAQs-btn');
+btnNone.addEventListener('click',()=>{
+  qnone.style.display = 'flex';
+  qnone.style.transition= '.5s ease-in-out'
+})
+
+
     </script>
-    <script src="App.js"></script>
   </body>
 </html>

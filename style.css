@@ -11,6 +11,12 @@
     --p-font: Roboto, sans-serif;
 }
 
+
+#question-none{
+    display:none;
+    margin-top:20px;
+}
+
 /* utilities */
 
 .container {
@@ -28,7 +34,15 @@ body {
     padding:0;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
+input[type=number] {
+  --moz-appearance: textfield;
+}
 
 
 
@@ -56,6 +70,86 @@ input{
     border:none;
     outline:none;
 }
+
+
+
+.home-input{
+    margin-top:120px;
+    width:780px;
+}
+.select-div{
+    display: grid;
+    grid-template-columns: repeat(2,48.8%);
+    gap:20px;
+    margin-bottom:16px;
+}
+.home-form{
+    margin-top:35px;
+}
+.home-form select{
+    width: 100%;
+    height:52px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #FFF;
+}
+.home-form input[type=text] {
+    width: 100%;
+    height:52px;
+    padding: 12px 20px;
+    margin: 10px 0 24px 0;
+    display: inline-block;
+    border-radius: 4px;
+    border: 1px solid #E1E1E1;
+    background-color: #FFF;
+    box-sizing: border-box;
+  }
+  
+  .home-form input[type=submit] {
+    width: 100%;
+    border-radius: 8px;
+    background-color: #64062D;
+    color: #FFF;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 150.523%; /* 24.084px */
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .home-form input[type=submit]:hover {
+    background-color: #3b021a;
+  }
+  #form-text{
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  #country{
+    outline: none;
+    appearance: none;
+    background-image: url("./images/Vector\ 6.svg");
+    background-repeat: no-repeat;
+    background-position: 97%;
+    font-size:14px;
+    font-weight: 400;
+    color:#000;
+    border-radius: 4px;
+    border: 1px solid #E1E1E1;
+    background-color: #FFF;
+  }
+  .styled-select option{
+    font-size:16px;
+    font-weight: 400;
+    color:#000;
+  }
 
 
 
@@ -226,6 +320,9 @@ input{
     font-size: 24px;
     font-weight: 700;
 }
+#heroLeft-middle-left h1{
+    font-size:24px;
+}
 .middle-number{
     height:48px;
     width:100%;
@@ -326,7 +423,7 @@ input{
     font-size: 16px;
     font-weight: 400;
 }
-.heroLeftEnd-input button{
+#myButton{
     width: 23%;
     height: 48px;
     padding: 10px 16px;
@@ -337,8 +434,11 @@ input{
     font-size: 16px;
     font-weight: 500;
 }
-
-
+#input-phoneNumber{
+    color: #202020;
+    font-size: 14px;
+    font-weight: 400;
+}
 
 
 
@@ -562,7 +662,7 @@ input{
     border: 1px solid #E1E1E1;
     background: #FFF;
     outline: none;
-    padding-left:20px;
+    padding:0 10px;
 }
 .input-area-button-section{
     width:100%;
@@ -614,7 +714,7 @@ input{
 .input-area-three-partOne-div-input{
     width:100%;
     height:52px;
-    padding-left:20px;
+    padding:0 40px 0 10px;
     outline:none;
     border-radius: 4px;
     border: 1px solid #E1E1E1;
@@ -870,6 +970,7 @@ input{
     border-radius:8px;
     outline:none;
     border:none;
+    background-color: #FFF;
 }
 
 
@@ -1197,6 +1298,10 @@ input{
         max-width: 960px;
         margin: 0 auto;
     }
+    .home-input{
+        margin-top:120px;
+        width:780px;
+    }
     .footerNavDisplayNone{
         display: none;
     }
@@ -1358,6 +1463,10 @@ input{
     .container {
         max-width: 720px;
         margin: 0 auto;
+    }
+    .home-input{
+        margin-top:80px;
+        width:780px;
     }
     .client{
         margin-top:80px;
@@ -1522,6 +1631,10 @@ input{
     .container {
         max-width: 540px;
         margin: 0 auto;
+    }
+    .home-input{
+        margin-top:80px;
+        width:780px;
     }
     .client{
         margin-top:80px;
@@ -1799,7 +1912,7 @@ input{
         font-size: 14px;
         font-weight: 400;
     }
-    .heroLeftEnd-input button{
+    #myButton{
         width:85px;
         height: 40px;
         color: #FFF;
@@ -1815,6 +1928,7 @@ input{
     }
     .middle-number{
         height:40px;
+        margin-top:4px;
     }
     .heroLeft-middle{
         width:100%;
@@ -1823,6 +1937,9 @@ input{
     }
     .heroLeft-middle h1{
         font-size: 16px;
+    }
+    #heroLeft-middle-left h1{
+        font-size:16px;
     }
     .heroLeft h1{
         font-size: 24px;
@@ -1836,6 +1953,9 @@ input{
         font-size: 24px;
         font-weight: 800;
         display: block;
+    }
+    .middle-btn button{
+        font-size: 14px;
     }
     .middle-btn{
         height:40px;
@@ -1981,6 +2101,10 @@ input{
         position:relative;
         top:-14px;
         right:20px;
+    }
+    .client{
+        margin-top:80px;
+        gap:32px;
     }
     .commentText{
         padding-right:5px;
@@ -2146,6 +2270,52 @@ input{
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.08);
     }
 
+
+    .home-input{
+        margin-top:44px;
+        width:100%;
+    }
+    .select-div{
+        display: grid;
+        grid-template-columns: 98%;
+        gap:14px;
+        margin-bottom:5px;
+    }
+    .home-form{
+        margin-top:40px;
+    }
+    .home-form select{
+        width: 100%;
+        height:40px;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    .home-form input[type=text] {
+        width: 100%;
+        height:40px;
+        padding: 12px 20px;
+        margin: 8px 0 20px 0;
+        display: inline-block;
+        border-radius: 4px;
+        border: 1px solid #E1E1E1;
+        background-color: #FFF;
+        box-sizing: border-box;
+      }
+      
+      .home-form input[type=submit] {
+        font-size: 14px;
+      }
+      #form-text{
+        font-size: 14px;
+      }
+      .styled-select option{
+        font-size:14px;
+      }
+    
 
       
 }
